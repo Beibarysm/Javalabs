@@ -1,6 +1,6 @@
 public class OverloadMethod {
-  public static int a;
-  public static int b;
+  public  int a;
+  public  int b;
 
     OverloadMethod(){
         a=-1;
@@ -12,7 +12,8 @@ public class OverloadMethod {
         this.b = 0;
     }
     OverloadMethod(int a, int b){
-
+this.a = b;
+this.b = a;
     }
 
 
@@ -64,10 +65,15 @@ public class OverloadMethod {
         //System.out.println("OverloadMethod() a = "+OverloadMethod.a+ " b = " + OverloadMethod.b);
 
         OverloadMethod ob1 = new OverloadMethod();
-        System.out.println("OverloadMethod() a = "+OverloadMethod.a+ " b = " + OverloadMethod.b);
+        System.out.println("OverloadMethod() a = "+ob1.a+ " b = " + ob1.b);
 
         OverloadMethod ob2 = new OverloadMethod(5);
-        System.out.println("OverloadMethod() a = "+OverloadMethod.a+ " b = " + OverloadMethod.b);
+        System.out.println("OverloadMethod() a = "+ob2.a+ " b = " + ob2.b);
+
+
+        OverloadMethod ob3 = new OverloadMethod(5,7);
+        System.out.println("OverloadMethod() a = "+ob3.a+ " b = " + ob3.b);
+
   /*
         int result = ob.sum(2,5);
         System.out.println("ob.sum(2,5) = " + result);
