@@ -1,21 +1,23 @@
 public class OverloadMethod {
   public  int a;
-  public  int b;
+  public  double b;
 
-    OverloadMethod(){
-        a=-1;
-        b=-1;
+    public OverloadMethod() {
+        this.a=0; this.b=0;
     }
 
-    OverloadMethod(int a){
+    public OverloadMethod(int a) {
         this.a = a;
-        this.b = 0;
-    }
-    OverloadMethod(int a, int b){
-this.a = b;
-this.b = a;
     }
 
+    public OverloadMethod(double b) {
+        this.b = b;
+    }
+
+    public OverloadMethod(int a, double b) {
+        this.a = a;
+        this.b = b;
+    }
 
     int sum(int a, int b){
         return a+b;
@@ -70,8 +72,11 @@ this.b = a;
         OverloadMethod ob2 = new OverloadMethod(5);
         System.out.println("OverloadMethod() a = "+ob2.a+ " b = " + ob2.b);
 
+        OverloadMethod ob4 = new OverloadMethod(5.0);
+        System.out.println("OverloadMethod() a = "+ob4.a+ " b = " + ob4.b);
 
-        OverloadMethod ob3 = new OverloadMethod(5,7);
+
+        OverloadMethod ob3 = new OverloadMethod(5,7.0);
         System.out.println("OverloadMethod() a = "+ob3.a+ " b = " + ob3.b);
 
   /*
