@@ -1,4 +1,21 @@
 public class OverloadMethod {
+  public static int a;
+  public static int b;
+
+    OverloadMethod(){
+        a=-1;
+        b=-1;
+    }
+
+    OverloadMethod(int a){
+        this.a = a;
+        this.b = 0;
+    }
+    OverloadMethod(int a, int b){
+
+    }
+
+
     int sum(int a, int b){
         return a+b;
     }
@@ -44,7 +61,14 @@ public class OverloadMethod {
     public static void main(String[] args) {
         long z=255;
         OverloadMethod.abs(z);
-        OverloadMethod ob = new OverloadMethod();
+        //System.out.println("OverloadMethod() a = "+OverloadMethod.a+ " b = " + OverloadMethod.b);
+
+        OverloadMethod ob1 = new OverloadMethod();
+        System.out.println("OverloadMethod() a = "+OverloadMethod.a+ " b = " + OverloadMethod.b);
+
+        OverloadMethod ob2 = new OverloadMethod(5);
+        System.out.println("OverloadMethod() a = "+OverloadMethod.a+ " b = " + OverloadMethod.b);
+  /*
         int result = ob.sum(2,5);
         System.out.println("ob.sum(2,5) = " + result);
         double result2 = ob.sum(1.3,1.4);
@@ -70,5 +94,6 @@ public class OverloadMethod {
         long res11 = ob.abs(233);
         System.out.println("abs(-233)= " + res11);
         System.out.println("check github");
+        */
     }
 }
